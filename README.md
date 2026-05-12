@@ -2,6 +2,14 @@
 
 A small project for managing student records. It has a REST API built with Express and MongoDB, and a simple web page on top so you can add, edit, and delete students without touching Postman.
 
+## Author
+
+- **Name:** Ousman Bah
+- **Matric Number:** 22423253
+- **Email:** ob22423253@utg.edu.gm
+
+**Submitted for:** Express Backend Assignment
+
 ## Features
 
 - Full CRUD for students
@@ -144,6 +152,3 @@ tests/          Jest tests
 server.js       App entry point
 ```
 
-## Author
-
-Ousman Bah

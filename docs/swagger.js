@@ -107,6 +107,27 @@ const definition = {
         }
       }
     },
+    '/api/author': {
+      get: {
+        tags: ['Info'],
+        summary: 'Project author information',
+        responses: {
+          200: {
+            description: 'Author details',
+            content: {
+              'application/json': {
+                example: {
+                  name: 'Ousman Bah',
+                  matric: '22423253',
+                  email: 'ob22423253@utg.edu.gm',
+                  project: 'Student Profile API'
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     '/api/students': {
       get: {
         tags: ['Students'],

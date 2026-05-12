@@ -1,3 +1,11 @@
+/**
+ * Student Profile Management API
+ * Author: Ousman Bah
+ * Matric: 22423253
+ * Email: ob22423253@utg.edu.gm
+ * Express Backend Assignment
+ */
+
 require('dotenv').config();
 
 const path = require('path');
@@ -21,6 +29,8 @@ const app = express();
 
 app.set('trust proxy', 1);
 
+// CSP disabled so Swagger UI's inline scripts and styles can load.
+// Acceptable here because this is an internal API + docs surface, not a public website.
 app.use(helmet({ contentSecurityPolicy: false }));
 app.use(cors({
   origin: process.env.CORS_ORIGIN || '*',
@@ -48,13 +58,13 @@ const apiLimiter = rateLimit({
 });
 app.use('/api/', apiLimiter);
 
+// Top-level health route (NOT under /api) — Render's health checks hit /health.
 app.get('/health', (req, res) => {
-  const states = ['disconnected', 'connected', 'connecting', 'disconnecting'];
   res.json({
     status: 'ok',
     uptime: process.uptime(),
     timestamp: new Date().toISOString(),
-    db: states[mongoose.connection.readyState] || 'unknown'
+    db: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected'
   });
 });
 
@@ -65,8 +75,18 @@ app.get('/api', (req, res) => {
     links: {
       docs: '/api/docs',
       students: '/api/students',
+      author: '/api/author',
       health: '/health'
     }
+  });
+});
+
+app.get('/api/author', (req, res) => {
+  res.json({
+    name: 'Ousman Bah',
+    matric: '22423253',
+    email: 'ob22423253@utg.edu.gm',
+    project: 'Student Profile API'
   });
 });
 

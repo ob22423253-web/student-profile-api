@@ -1,7 +1,7 @@
 {
   "name": "student-profile-api",
   "version": "1.0.0",
-  "description": "Student profile management REST API with Express and MongoDB",
+  "description": "Student profile management REST API with Express and MongoDB. University assignment — Express Backend.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -11,7 +11,7 @@
     "test:coverage": "jest --coverage --forceExit --detectOpenHandles"
   },
   "keywords": ["express", "mongodb", "students", "rest-api"],
-  "author": "Ousman Bah",
+  "author": "Ousman Bah <ob22423253@utg.edu.gm>",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",

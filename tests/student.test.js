@@ -58,6 +58,19 @@ describe('GET /api', () => {
   });
 });
 
+describe('GET /api/author', () => {
+  it('returns author info', async () => {
+    const res = await request(app).get('/api/author');
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      name: 'Ousman Bah',
+      matric: '22423253',
+      email: 'ob22423253@utg.edu.gm',
+      project: 'Student Profile API'
+    });
+  });
+});
+
 describe('GET / (frontend)', () => {
   it('serves the index.html', async () => {
     const res = await request(app).get('/');
