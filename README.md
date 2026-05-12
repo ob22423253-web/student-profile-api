@@ -33,7 +33,7 @@ A small project for managing student records. It has a REST API built with Expre
 
 ## Live Demo
 
-https://YOUR-RENDER-URL.onrender.com — replace after deployment
+https://student-profile-api-fpms.onrender.com — replace after deployment
 
 ## Getting Started
 
